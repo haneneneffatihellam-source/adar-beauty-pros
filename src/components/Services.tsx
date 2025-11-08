@@ -38,11 +38,11 @@ const Services = () => {
       link: "/massage",
     },
     {
-      title: "Soins visage",
+      title: "Soins",
       description: "Nettoyage de peau, hydratation, anti-âge... Des soins sur-mesure pour votre peau.",
       icon: Sparkles,
       image: soinsImg,
-      link: "/soins-visage",
+      link: "/soins",
     },
     {
       title: "Événements",

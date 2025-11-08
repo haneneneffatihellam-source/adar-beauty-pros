@@ -1,10 +1,10 @@
 import ServicePage from "./ServicePage";
 import soinsImg from "@/assets/soins-visage.jpg";
 
-const SoinsVisage = () => {
+const Soins = () => {
   return (
     <ServicePage
-      title="Soins visage à domicile"
+      title="Soins à domicile"
       description="Prenez soin de votre peau avec nos esthéticiennes expertes. Nettoyage de peau en profondeur, soins anti-âge, hydratation... Des protocoles personnalisés pour révéler l'éclat naturel de votre visage."
       image={soinsImg}
       benefits={[
@@ -26,4 +26,4 @@ const SoinsVisage = () => {
   );
 };
 
-export default SoinsVisage;
+export default Soins;
