@@ -11,6 +11,8 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import ContactBar from "./ContactBar";
+import SearchDialog from "./SearchDialog";
+import AuthDialog from "./AuthDialog";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -185,9 +187,11 @@ const Header = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity">
+          {/* Icons and CTA */}
+          <div className="hidden lg:flex items-center gap-2">
+            <SearchDialog />
+            <AuthDialog />
+            <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity ml-2">
               Réserver maintenant
             </Button>
           </div>
