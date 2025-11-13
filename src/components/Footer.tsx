@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import { Sparkles, Facebook, Instagram, Phone, Mail } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-card border-t border-border">
+  return <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
@@ -45,7 +43,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/a-propos" className="text-sm text-muted-foreground hover:text-primary transition-colors">Qui sommes-nous</Link></li>
               <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
-              <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Devenir professionnel</Link></li>
+              
             </ul>
           </div>
 
@@ -68,7 +66,7 @@ const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © 2025 À Domicile — Beauté & Bien-être à la maison. Disponible 24h/24 dans toutes les régions 🇹🇳
+              © 2025 À Domicile — Beauté & Bien-être à la maison.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-xs text-muted-foreground">
               <Link to="/contact" className="hover:text-primary transition-colors">Contact</Link>
@@ -80,8 +78,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
