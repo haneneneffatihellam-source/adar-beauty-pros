@@ -9,45 +9,26 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-6 md:space-y-8">
-            <div className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-soft">
+            <div className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-soft animate-pulse">
               <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-foreground">Première plateforme beauté en Tunisie</span>
+              <span className="text-sm font-medium text-foreground">Disponible 24h/24 dans toutes les régions 🇹🇳</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Beauté & Bien-être à domicile,{" "}
+              Première application de réservation beauté à domicile{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                où que vous soyez
+                en Tunisie 💅
               </span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Coiffure, maquillage, manucure, massage, soins visage — les pros viennent jusqu'à vous.
+              Coiffure, Onglerie, Soins, Épilation, Maquillage — nos professionnelles certifiées viennent à vous, où que vous soyez.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity text-base">
-                Je réserve maintenant
+                💖 Prendre RDV maintenant
               </Button>
-              <Button size="lg" variant="outline" className="text-base">
-                Découvrir nos services
-              </Button>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap gap-8 pt-4">
-              <div>
-                <div className="text-2xl font-bold text-primary">500+</div>
-                <div className="text-sm text-muted-foreground">Professionnels certifiés</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-primary">10,000+</div>
-                <div className="text-sm text-muted-foreground">Prestations réalisées</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-primary">4.9/5</div>
-                <div className="text-sm text-muted-foreground">Satisfaction client</div>
-              </div>
             </div>
           </div>
 
@@ -56,7 +37,7 @@ const Hero = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-soft">
               <img
                 src={heroImage}
-                alt="Professionnelle beauté fournissant un soin à domicile"
+                alt="Professionnelle beauté arrivant chez cliente à domicile"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -68,8 +49,8 @@ const Hero = () => {
                   <Sparkles className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <div>
-                  <div className="font-semibold">Service Premium</div>
-                  <div className="text-sm text-muted-foreground">À partir de 50 DT</div>
+                  <div className="font-semibold">Professionnelles Certifiées</div>
+                  <div className="text-sm text-muted-foreground">Notées ★★★★★</div>
                 </div>
               </div>
             </div>

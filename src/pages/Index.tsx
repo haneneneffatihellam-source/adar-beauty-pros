@@ -3,9 +3,9 @@ import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
-import VideoPresentation from "@/components/VideoPresentation";
+import AnimationSection from "@/components/AnimationSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import Testimonials from "@/components/Testimonials";
+import CompanySection from "@/components/CompanySection";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import StickyBooking from "@/components/StickyBooking";
@@ -18,9 +18,9 @@ const Index = () => {
       <Stats />
       <Services />
       <HowItWorks />
-      <VideoPresentation />
+      <AnimationSection />
       <WhyChooseUs />
-      <Testimonials />
+      <CompanySection />
       <FAQ />
       <Footer />
       <StickyBooking />

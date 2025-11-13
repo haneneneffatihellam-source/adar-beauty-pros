@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sparkles, ChevronDown } from "lucide-react";
+import { Menu, X, Sparkles, ShoppingCart } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -18,28 +18,57 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const coiffureItems = [
-    { label: "Coupe & Brushing", path: "/coiffure/coupe-brushing" },
+    { label: "Coupe", path: "/coiffure/coupe-brushing" },
+    { label: "Brushing", path: "/coiffure/coupe-brushing" },
+    { label: "Soin / Traitement capillaire", path: "/coiffure/lissage" },
+    { label: "Lissage (tanin, botox, kératine)", path: "/coiffure/lissage" },
+    { label: "Tresses africaines", path: "/coiffure/chignons" },
     { label: "Coloration", path: "/coiffure/coloration" },
-    { label: "Chignons", path: "/coiffure/chignons" },
-    { label: "Lissage", path: "/coiffure/lissage" },
+    { label: "Balayage", path: "/coiffure/coloration" },
+    { label: "Extensions", path: "/coiffure/coupe-brushing" },
+    { label: "Head Spa", path: "/coiffure/lissage" },
+    { label: "Coiffure mariée", path: "/coiffure/chignons" },
+    { label: "Coiffure soirée", path: "/coiffure/chignons" },
   ];
 
-  const maquillageItems = [
-    { label: "Maquillage Jour", path: "/maquillage/jour" },
-    { label: "Maquillage Soirée", path: "/maquillage/soiree" },
-    { label: "Maquillage Mariée", path: "/maquillage/mariee" },
-  ];
-
-  const onglesItems = [
-    { label: "Manucure", path: "/ongles/manucure" },
-    { label: "Pédicure", path: "/ongles/pedicure" },
+  const onglerieItems = [
+    { label: "Manucure simple", path: "/ongles/manucure" },
+    { label: "Manucure russe", path: "/ongles/manucure" },
+    { label: "Pédicure complète", path: "/ongles/pedicure" },
+    { label: "Pose vernis classique", path: "/ongles/manucure" },
+    { label: "Gainage / Renforcement", path: "/ongles/manucure" },
+    { label: "Pose Capsules + Gel", path: "/ongles/manucure" },
+    { label: "Pose Gel sur chablon", path: "/ongles/manucure" },
+    { label: "Remplissage", path: "/ongles/manucure" },
+    { label: "Dépose faux ongles", path: "/ongles/manucure" },
+    { label: "French / Babyboomer", path: "/ongles/manucure" },
     { label: "Nail Art", path: "/ongles/nail-art" },
   ];
 
   const soinsItems = [
-    { label: "Nettoyage de peau", path: "/soins/nettoyage" },
-    { label: "Soins hydratants", path: "/soins/hydratants" },
-    { label: "Soins anti-âge", path: "/soins/anti-age" },
+    { label: "Soin du visage", path: "/soins/nettoyage" },
+    { label: "Soin des mains", path: "/soins/hydratants" },
+    { label: "Soin des pieds", path: "/soins/hydratants" },
+    { label: "Soin du corps", path: "/soins/hydratants" },
+    { label: "Masques & sérums", path: "/soins/anti-age" },
+    { label: "Micro-dermabrasion", path: "/soins/anti-age" },
+  ];
+
+  const epilationItems = [
+    { label: "Cire chaude", path: "/epilation" },
+    { label: "Cire orientale", path: "/epilation" },
+    { label: "Jambes / bras", path: "/epilation" },
+    { label: "Aisselles", path: "/epilation" },
+    { label: "Maillot", path: "/epilation" },
+    { label: "Sourcils / visage", path: "/epilation" },
+  ];
+
+  const maquillageItems = [
+    { label: "Maquillage mariée", path: "/maquillage/mariee" },
+    { label: "Maquillage jour", path: "/maquillage/jour" },
+    { label: "Maquillage soirée", path: "/maquillage/soiree" },
+    { label: "Maquillage shooting", path: "/maquillage/soiree" },
+    { label: "Forfait coiffure + maquillage", path: "/maquillage/mariee" },
   ];
 
   return (
@@ -60,15 +89,9 @@ const Header = () => {
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
-                <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-3 py-2">
-                  Accueil
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-sm font-medium">Coiffure</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="w-48 p-2">
+                  <ul className="w-56 p-2">
                     <li>
                       <NavigationMenuLink asChild>
                         <Link to="/coiffure" className="block px-4 py-2 hover:bg-accent rounded-md">
@@ -77,7 +100,79 @@ const Header = () => {
                       </NavigationMenuLink>
                     </li>
                     {coiffureItems.map((item) => (
-                      <li key={item.path}>
+                      <li key={item.path + item.label}>
+                        <NavigationMenuLink asChild>
+                          <Link to={item.path} className="block px-4 py-2 hover:bg-accent rounded-md text-sm">
+                            {item.label}
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-medium">Onglerie</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="w-56 p-2">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link to="/ongles" className="block px-4 py-2 hover:bg-accent rounded-md">
+                          Tous les services
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    {onglerieItems.map((item) => (
+                      <li key={item.path + item.label}>
+                        <NavigationMenuLink asChild>
+                          <Link to={item.path} className="block px-4 py-2 hover:bg-accent rounded-md text-sm">
+                            {item.label}
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-medium">Soins</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="w-56 p-2">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link to="/soins" className="block px-4 py-2 hover:bg-accent rounded-md">
+                          Tous les soins
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    {soinsItems.map((item) => (
+                      <li key={item.path + item.label}>
+                        <NavigationMenuLink asChild>
+                          <Link to={item.path} className="block px-4 py-2 hover:bg-accent rounded-md text-sm">
+                            {item.label}
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-medium">Épilation</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="w-56 p-2">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link to="/epilation" className="block px-4 py-2 hover:bg-accent rounded-md">
+                          Tous les services
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    {epilationItems.map((item) => (
+                      <li key={item.path + item.label}>
                         <NavigationMenuLink asChild>
                           <Link to={item.path} className="block px-4 py-2 hover:bg-accent rounded-md text-sm">
                             {item.label}
@@ -92,7 +187,7 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-sm font-medium">Maquillage</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="w-48 p-2">
+                  <ul className="w-56 p-2">
                     <li>
                       <NavigationMenuLink asChild>
                         <Link to="/maquillage" className="block px-4 py-2 hover:bg-accent rounded-md">
@@ -101,7 +196,7 @@ const Header = () => {
                       </NavigationMenuLink>
                     </li>
                     {maquillageItems.map((item) => (
-                      <li key={item.path}>
+                      <li key={item.path + item.label}>
                         <NavigationMenuLink asChild>
                           <Link to={item.path} className="block px-4 py-2 hover:bg-accent rounded-md text-sm">
                             {item.label}
@@ -111,88 +206,18 @@ const Header = () => {
                     ))}
                   </ul>
                 </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium">Ongles</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="w-48 p-2">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/ongles" className="block px-4 py-2 hover:bg-accent rounded-md">
-                          Tous les services
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    {onglesItems.map((item) => (
-                      <li key={item.path}>
-                        <NavigationMenuLink asChild>
-                          <Link to={item.path} className="block px-4 py-2 hover:bg-accent rounded-md text-sm">
-                            {item.label}
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link to="/massage" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-3 py-2">
-                  Massage
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium">Soins</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="w-48 p-2">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/soins" className="block px-4 py-2 hover:bg-accent rounded-md">
-                          Tous les soins
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    {soinsItems.map((item) => (
-                      <li key={item.path}>
-                        <NavigationMenuLink asChild>
-                          <Link to={item.path} className="block px-4 py-2 hover:bg-accent rounded-md text-sm">
-                            {item.label}
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link to="/evenements" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-3 py-2">
-                  Événements
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link to="/a-propos" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-3 py-2">
-                  À propos
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link to="/contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-3 py-2">
-                  Contact
-                </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 
           {/* Icons and CTA */}
           <div className="hidden lg:flex items-center gap-2">
-            <SearchDialog />
             <AuthDialog />
+            <button className="p-2 hover:bg-accent rounded-full transition-colors">
+              <ShoppingCart className="w-5 h-5 text-foreground" />
+            </button>
             <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity ml-2">
-              Réserver maintenant
+              💖 Prendre RDV
             </Button>
           </div>
 
@@ -214,17 +239,49 @@ const Header = () => {
           {isMenuOpen && (
             <nav className="lg:hidden py-4 border-t border-border max-h-[70vh] overflow-y-auto">
               <div className="flex flex-col gap-3">
-                <Link to="/" className="text-sm font-medium text-foreground py-2" onClick={() => setIsMenuOpen(false)}>
-                  Accueil
-                </Link>
-                
                 <div className="border-b border-border pb-2">
                   <div className="text-sm font-semibold text-foreground mb-2">Coiffure</div>
                   <Link to="/coiffure" className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
                     Tous les services
                   </Link>
-                  {coiffureItems.map((item) => (
-                    <Link key={item.path} to={item.path} className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
+                  {coiffureItems.slice(0, 5).map((item) => (
+                    <Link key={item.path + item.label} to={item.path} className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="border-b border-border pb-2">
+                  <div className="text-sm font-semibold text-foreground mb-2">Onglerie</div>
+                  <Link to="/ongles" className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
+                    Tous les services
+                  </Link>
+                  {onglerieItems.slice(0, 5).map((item) => (
+                    <Link key={item.path + item.label} to={item.path} className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="border-b border-border pb-2">
+                  <div className="text-sm font-semibold text-foreground mb-2">Soins</div>
+                  <Link to="/soins" className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
+                    Tous les soins
+                  </Link>
+                  {soinsItems.map((item) => (
+                    <Link key={item.path + item.label} to={item.path} className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="border-b border-border pb-2">
+                  <div className="text-sm font-semibold text-foreground mb-2">Épilation</div>
+                  <Link to="/epilation" className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
+                    Tous les services
+                  </Link>
+                  {epilationItems.map((item) => (
+                    <Link key={item.path + item.label} to={item.path} className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
                       {item.label}
                     </Link>
                   ))}
@@ -236,52 +293,14 @@ const Header = () => {
                     Tous les services
                   </Link>
                   {maquillageItems.map((item) => (
-                    <Link key={item.path} to={item.path} className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
+                    <Link key={item.path + item.label} to={item.path} className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
                       {item.label}
                     </Link>
                   ))}
                 </div>
-
-                <div className="border-b border-border pb-2">
-                  <div className="text-sm font-semibold text-foreground mb-2">Ongles</div>
-                  <Link to="/ongles" className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
-                    Tous les services
-                  </Link>
-                  {onglesItems.map((item) => (
-                    <Link key={item.path} to={item.path} className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-
-                <Link to="/massage" className="text-sm font-medium text-foreground py-2" onClick={() => setIsMenuOpen(false)}>
-                  Massage
-                </Link>
-
-                <div className="border-b border-border pb-2">
-                  <div className="text-sm font-semibold text-foreground mb-2">Soins</div>
-                  <Link to="/soins" className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
-                    Tous les soins
-                  </Link>
-                  {soinsItems.map((item) => (
-                    <Link key={item.path} to={item.path} className="text-sm text-muted-foreground hover:text-primary py-1 block pl-4" onClick={() => setIsMenuOpen(false)}>
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-
-                <Link to="/evenements" className="text-sm font-medium text-foreground py-2" onClick={() => setIsMenuOpen(false)}>
-                  Événements
-                </Link>
-                <Link to="/a-propos" className="text-sm font-medium text-foreground py-2" onClick={() => setIsMenuOpen(false)}>
-                  À propos
-                </Link>
-                <Link to="/contact" className="text-sm font-medium text-foreground py-2" onClick={() => setIsMenuOpen(false)}>
-                  Contact
-                </Link>
                 
                 <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity mt-2">
-                  Réserver maintenant
+                  💖 Prendre RDV
                 </Button>
               </div>
             </nav>

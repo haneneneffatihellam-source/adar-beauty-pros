@@ -17,7 +17,7 @@ import Ongles from "./pages/Ongles";
 import OnglesManucure from "./pages/OnglesManucure";
 import OnglesPedicure from "./pages/OnglesPedicure";
 import OnglesNailArt from "./pages/OnglesNailArt";
-import Massage from "./pages/Massage";
+import Epilation from "./pages/Epilation";
 import Soins from "./pages/Soins";
 import SoinsNettoyage from "./pages/SoinsNettoyage";
 import SoinsHydratants from "./pages/SoinsHydratants";
@@ -54,7 +54,7 @@ const App = () => (
           <Route path="/ongles/pedicure" element={<OnglesPedicure />} />
           <Route path="/ongles/nail-art" element={<OnglesNailArt />} />
           
-          <Route path="/massage" element={<Massage />} />
+          <Route path="/epilation" element={<Epilation />} />
           
           <Route path="/soins" element={<Soins />} />
           <Route path="/soins/nettoyage" element={<SoinsNettoyage />} />

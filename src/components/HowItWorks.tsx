@@ -1,25 +1,38 @@
-import { Calendar, MapPin, Sparkles } from "lucide-react";
+import { Search, Calendar, Phone, Home, Sparkles } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const HowItWorks = () => {
   const steps = [
     {
-      number: "01",
+      number: "1",
       title: "Choisissez votre service",
-      description: "Sélectionnez la prestation beauté qui vous convient parmi notre large catalogue.",
-      icon: Sparkles,
+      description: "Sélectionnez la prestation souhaitée.",
+      icon: Search,
     },
     {
-      number: "02",
-      title: "Sélectionnez la date et le lieu",
-      description: "Choisissez votre créneau horaire et l'adresse où vous souhaitez recevoir le service.",
+      number: "2",
+      title: "Réservez votre créneau",
+      description: "Calendrier interactif (type Calendly).",
       icon: Calendar,
     },
     {
-      number: "03",
-      title: "Recevez votre professionnel",
-      description: "Un expert certifié se déplace chez vous avec tout le matériel nécessaire.",
-      icon: MapPin,
+      number: "3",
+      title: "Diagnostic personnalisé",
+      description: "Un expert beauté vous contacte pour comprendre vos besoins avant d'envoyer une professionnelle certifiée.",
+      icon: Phone,
+    },
+    {
+      number: "4",
+      title: "Votre pro arrive chez vous",
+      description: "Matériel & produits professionnels inclus.",
+      icon: Home,
+    },
+    {
+      number: "5",
+      title: "Profitez de votre moment beauté",
+      description: "Service de qualité salon dans le confort de votre foyer. 💖",
+      icon: Sparkles,
     },
   ];
 
@@ -33,26 +46,32 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto mb-8">
           {steps.map((step, index) => (
             <div key={step.number} className="relative">
               <Card className="h-full hover:shadow-soft transition-all duration-300">
-                <CardContent className="p-8 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-6">
-                    <step.icon className="w-8 h-8 text-primary-foreground" />
+                <CardContent className="p-6 text-center">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-primary mb-4">
+                    <step.icon className="w-7 h-7 text-primary-foreground" />
                   </div>
-                  <div className="text-4xl font-bold text-primary mb-4">{step.number}</div>
-                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                  <div className="text-3xl font-bold text-primary mb-3">{step.number}</div>
+                  <h3 className="text-base font-semibold mb-2">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                 </CardContent>
               </Card>
               
               {/* Connector Line */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-primary" />
+                <div className="hidden lg:block absolute top-1/3 -right-3 w-6 h-0.5 bg-gradient-primary z-10" />
               )}
             </div>
           ))}
+        </div>
+
+        <div className="text-center">
+          <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity">
+            💖 Prendre RDV maintenant
+          </Button>
         </div>
       </div>
     </section>

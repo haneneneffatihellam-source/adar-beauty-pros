@@ -26,7 +26,7 @@ const ServicePage = ({ title, description, image, benefits, prestations }: Servi
               <h1 className="text-4xl md:text-5xl font-bold">{title}</h1>
               <p className="text-lg text-muted-foreground leading-relaxed">{description}</p>
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity">
-                Réserver maintenant
+                💖 Prendre RDV
               </Button>
             </div>
             <div className="relative rounded-3xl overflow-hidden shadow-soft">

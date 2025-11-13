@@ -1,72 +1,79 @@
-import { Scissors, Palette, Hand, HeartPulse, Sparkles, PartyPopper } from "lucide-react";
 import ServiceCard from "./ServiceCard";
+import { Scissors, Sparkles, Heart, Droplet, Palette } from "lucide-react";
 import coiffureImg from "@/assets/coiffure.jpg";
-import maquillageImg from "@/assets/maquillage.jpg";
 import onglesImg from "@/assets/ongles.jpg";
-import massageImg from "@/assets/massage.jpg";
 import soinsImg from "@/assets/soins-visage.jpg";
-import evenementsImg from "@/assets/evenements.jpg";
+import epilationImg from "@/assets/epilation.jpg";
+import maquillageImg from "@/assets/maquillage.jpg";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
   const services = [
     {
       title: "Coiffure",
-      description: "Coupe, brushing, coloration, chignons... Nos coiffeuses expertes subliment votre chevelure.",
+      description: "Coupe, brushing, coloration, lissage, chignons... Nos coiffeuses viennent avec tout le matériel professionnel.",
       icon: Scissors,
       image: coiffureImg,
       link: "/coiffure",
     },
     {
-      title: "Maquillage",
-      description: "Maquillage jour, soirée ou professionnel. Révélez votre beauté naturelle.",
-      icon: Palette,
-      image: maquillageImg,
-      link: "/maquillage",
-    },
-    {
-      title: "Ongles",
-      description: "Manucure, pédicure, pose de vernis semi-permanent et nail art créatif.",
-      icon: Hand,
+      title: "Onglerie",
+      description: "Manucure, pédicure, nail art, pose de gel... Des ongles parfaits sans quitter votre domicile.",
+      icon: Sparkles,
       image: onglesImg,
       link: "/ongles",
     },
     {
-      title: "Massage",
-      description: "Massage relaxant, sportif ou thérapeutique pour votre bien-être absolu.",
-      icon: HeartPulse,
-      image: massageImg,
-      link: "/massage",
-    },
-    {
       title: "Soins",
-      description: "Nettoyage de peau, hydratation, anti-âge... Des soins sur-mesure pour votre peau.",
-      icon: Sparkles,
+      description: "Soins du visage, des mains, des pieds et du corps. Une peau éclatante et soignée à domicile.",
+      icon: Heart,
       image: soinsImg,
       link: "/soins",
     },
     {
-      title: "Événements",
-      description: "Mariage, anniversaire, soirée... Nous vous préparons pour vos occasions spéciales.",
-      icon: PartyPopper,
-      image: evenementsImg,
-      link: "/evenements",
+      title: "Épilation",
+      description: "Cire chaude ou orientale, toutes zones. Une peau douce et nette réalisée par des esthéticiennes expérimentées.",
+      icon: Droplet,
+      image: epilationImg,
+      link: "/epilation",
+    },
+    {
+      title: "Maquillage",
+      description: "Maquillage jour, soirée, mariée... Nos maquilleuses révèlent votre beauté pour toutes occasions.",
+      icon: Palette,
+      image: maquillageImg,
+      link: "/maquillage",
     },
   ];
 
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos services beauté</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Nos services beauté
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Des prestations complètes réalisées par des professionnels certifiés, dans le confort de votre domicile.
+            Des prestations professionnelles réalisées chez vous par des experts certifiés
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          {services.slice(0, 3).map((service) => (
             <ServiceCard key={service.title} {...service} />
           ))}
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-8 mb-8 max-w-4xl mx-auto">
+          {services.slice(3).map((service) => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity">
+            💖 Prendre RDV
+          </Button>
         </div>
       </div>
     </section>

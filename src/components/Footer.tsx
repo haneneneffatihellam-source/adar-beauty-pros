@@ -33,10 +33,9 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/coiffure" className="text-sm text-muted-foreground hover:text-primary transition-colors">Coiffure</Link></li>
               <li><Link to="/maquillage" className="text-sm text-muted-foreground hover:text-primary transition-colors">Maquillage</Link></li>
-              <li><Link to="/ongles" className="text-sm text-muted-foreground hover:text-primary transition-colors">Ongles</Link></li>
-              <li><Link to="/massage" className="text-sm text-muted-foreground hover:text-primary transition-colors">Massage</Link></li>
+              <li><Link to="/ongles" className="text-sm text-muted-foreground hover:text-primary transition-colors">Onglerie</Link></li>
+              <li><Link to="/epilation" className="text-sm text-muted-foreground hover:text-primary transition-colors">Épilation</Link></li>
               <li><Link to="/soins" className="text-sm text-muted-foreground hover:text-primary transition-colors">Soins</Link></li>
-              <li><Link to="/evenements" className="text-sm text-muted-foreground hover:text-primary transition-colors">Événements</Link></li>
             </ul>
           </div>
 
@@ -45,9 +44,8 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">À propos</h3>
             <ul className="space-y-2">
               <li><Link to="/a-propos" className="text-sm text-muted-foreground hover:text-primary transition-colors">Qui sommes-nous</Link></li>
-              <li><Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
-              <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Devenir professionnel</Link></li>
               <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
+              <li><Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Devenir professionnel</Link></li>
             </ul>
           </div>
 
@@ -67,10 +65,19 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            © 2024 À Domicile. Tous droits réservés.
-          </p>
+        <div className="border-t border-border pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-muted-foreground text-center md:text-left">
+              © 2025 À Domicile — Beauté & Bien-être à la maison. Disponible 24h/24 dans toutes les régions 🇹🇳
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-xs text-muted-foreground">
+              <Link to="/contact" className="hover:text-primary transition-colors">Contact</Link>
+              <Link to="#" className="hover:text-primary transition-colors">Mentions légales</Link>
+              <Link to="#" className="hover:text-primary transition-colors">CGV</Link>
+              <Link to="#" className="hover:text-primary transition-colors">Confidentialité</Link>
+              <Link to="#" className="hover:text-primary transition-colors">Annulation</Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
