@@ -1,13 +1,27 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Menu, X, Sparkles, ShoppingCart } from "lucide-react";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import ContactBar from "./ContactBar";
 import SearchDialog from "./SearchDialog";
 import AuthDialog from "./AuthDialog";
+import CartSidebar from "./CartSidebar";
+import { useCart } from "@/contexts/CartContext";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { getItemCount } = useCart();
+  const cartItemCount = getItemCount();
+
+  const handleCartCheckout = () => {
+    // Scroll to booking section on current page if available
+    const bookingSection = document.querySelector('[data-booking-section]');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   const coiffureItems = [{
     label: "Coupe",
     path: "/coiffure/coupe-brushing"
@@ -261,8 +275,17 @@ const Header = () => {
           {/* Icons and CTA */}
           <div className="hidden lg:flex items-center gap-2">
             <AuthDialog />
-            <button className="p-2 hover:bg-accent rounded-full transition-colors">
+            <button 
+              className="relative p-2 hover:bg-accent rounded-full transition-colors"
+              onClick={() => setIsCartOpen(true)}
+              aria-label="Ouvrir le panier"
+            >
               <ShoppingCart className="w-5 h-5 text-foreground" />
+              {cartItemCount > 0 && (
+                <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 bg-primary text-primary-foreground text-xs">
+                  {cartItemCount}
+                </Badge>
+              )}
             </button>
             
           </div>
@@ -333,6 +356,12 @@ const Header = () => {
             </nav>}
         </div>
       </header>
+      
+      <CartSidebar 
+        open={isCartOpen} 
+        onOpenChange={setIsCartOpen}
+        onCheckout={handleCartCheckout}
+      />
     </>;
 };
 export default Header;
