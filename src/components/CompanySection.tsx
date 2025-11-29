@@ -27,7 +27,7 @@ const CompanySection = () => {
 
             {/* Texte à droite */}
             <div className="space-y-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <div className="space-y-4">
+              <div className="space-y-4 text-center">
                 <p className="text-primary font-semibold uppercase tracking-[0.2em] text-sm">
                   À propos
                 </p>

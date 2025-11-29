@@ -51,9 +51,6 @@ const FAQ = () => {
           <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">
             Questions fréquentes
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Questions d'ordre général
-          </p>
         </div>
         
         <Accordion type="single" collapsible className="w-full mb-12">
