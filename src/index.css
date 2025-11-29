@@ -41,6 +41,7 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(340 65% 75%), hsl(340 70% 85%));
     --gradient-hero: linear-gradient(135deg, hsl(30 25% 97%), hsl(340 65% 95%));
     --shadow-soft: 0 4px 20px hsla(340, 65%, 75%, 0.15);
+    --shadow-elegant: 0 10px 40px hsla(340, 65%, 75%, 0.25);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
