@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
-import WhyChooseUs from "@/components/WhyChooseUs";
 import KeyFeatures from "@/components/KeyFeatures";
 import CompanySection from "@/components/CompanySection";
 import TeamSection from "@/components/TeamSection";
@@ -18,7 +17,6 @@ const Index = () => {
       <Hero />
       <Services />
       <HowItWorks />
-      <WhyChooseUs />
       <KeyFeatures />
       <CompanySection />
       <TeamSection />
