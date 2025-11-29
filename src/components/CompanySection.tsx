@@ -4,12 +4,12 @@ import { Play } from "lucide-react";
 
 const CompanySection = () => {
   return (
-    <section className="py-20 bg-[#FBF5EF]">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-secondary/10">
+      <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Vidéo / Image à gauche */}
-            <div className="relative group">
+            <div className="relative group animate-fade-in">
               <div className="relative rounded-[20px] overflow-hidden shadow-elegant aspect-video bg-gradient-to-br from-primary/20 via-secondary/30 to-accent/20">
                 <img 
                   src="/placeholder.svg" 
@@ -26,45 +26,48 @@ const CompanySection = () => {
             </div>
 
             {/* Texte à droite */}
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-serif text-foreground font-bold">
-                Qui sommes-nous ?
-              </h2>
+            <div className="space-y-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <div className="space-y-4">
+                <p className="text-primary font-semibold uppercase tracking-[0.2em] text-sm">
+                  À propos
+                </p>
+                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground">
+                  Qui sommes-nous ?
+                </h2>
+              </div>
               
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
                 À Domicile, c'est la première plateforme tunisienne dédiée aux services beauté directement chez vous.
               </p>
 
-              <ul className="space-y-4 text-base text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="text-2xl">•</span>
-                  <span>
+              <ul className="space-y-5 text-base md:text-lg text-muted-foreground">
+                <li className="flex items-start gap-3">
+                  <span className="text-primary text-xl mt-1">•</span>
+                  <span className="leading-relaxed">
                     <strong className="text-foreground font-semibold">Simplifier</strong> l'accès aux prestations beauté professionnelles, où que vous soyez.
                   </span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-2xl">•</span>
-                  <span>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary text-xl mt-1">•</span>
+                  <span className="leading-relaxed">
                     <strong className="text-foreground font-semibold">Révéler</strong> le talent des expertes beauté qui se déplacent à domicile.
                   </span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-2xl">•</span>
-                  <span>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary text-xl mt-1">•</span>
+                  <span className="leading-relaxed">
                     <strong className="text-foreground font-semibold">Créer</strong> une expérience fluide, sécurisée et respectueuse du temps de chacune.
                   </span>
                 </li>
               </ul>
 
-              <p className="text-base text-muted-foreground italic">
+              <p className="text-base md:text-lg text-muted-foreground italic font-light">
                 Voilà ce qui nous anime chaque jour.
               </p>
 
               <Link to="/a-propos">
                 <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="rounded-full border-foreground/70 hover:bg-primary/10 transition-colors mt-4"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-base rounded-full shadow-elegant transition-all duration-200 hover:scale-105 mt-2"
                 >
                   En savoir plus
                 </Button>
