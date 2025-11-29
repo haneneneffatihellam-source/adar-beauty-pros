@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import AnimationSection from "@/components/AnimationSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import KeyFeatures from "@/components/KeyFeatures";
 import CompanySection from "@/components/CompanySection";
 import TeamSection from "@/components/TeamSection";
 import AppPromotion from "@/components/AppPromotion";
@@ -24,6 +25,7 @@ const Index = () => {
       <HowItWorks />
       <AnimationSection />
       <WhyChooseUs />
+      <KeyFeatures />
       <CompanySection />
       <TeamSection />
       <AppPromotion />
