@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -57,6 +58,7 @@ export default {
       },
       boxShadow: {
         'soft': 'var(--shadow-soft)',
+        'elegant': 'var(--shadow-elegant)',
       },
       transitionProperty: {
         'smooth': 'var(--transition-smooth)',
