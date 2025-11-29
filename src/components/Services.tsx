@@ -57,7 +57,7 @@ const Services = () => {
             Nos services beauté
           </h2>
           <p className="font-sans text-lg text-muted-foreground max-w-2xl mx-auto">
-            Des prestations professionnelles réalisées chez vous par des experts certifiés
+            Coiffure, Onglerie, Soins, Épilation, Maquillage
           </p>
         </div>
 

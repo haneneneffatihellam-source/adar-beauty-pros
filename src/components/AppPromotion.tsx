@@ -9,7 +9,7 @@ const AppPromotion = () => {
             {/* Left: Text & Buttons */}
             <div className="text-white space-y-6">
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight">
-                Plus simple avec l'application
+                Plus simple avec <span className="inline-block">l'application</span>
               </h2>
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">
                 Réservez, modifiez ou annulez vos prestations beauté où que vous soyez, en toute simplicité.

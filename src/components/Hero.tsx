@@ -27,7 +27,7 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity text-base">
-                💖 Prendre RDV maintenant
+                Prendre RDV maintenant
               </Button>
             </div>
           </div>
