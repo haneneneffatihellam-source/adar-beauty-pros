@@ -49,7 +49,10 @@ const Services = () => {
   return (
     <section id="services-section" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 space-y-4">
+          <p className="text-primary font-semibold uppercase tracking-[0.2em] text-sm">
+            Nos services
+          </p>
           <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">
             Nos services beauté
           </h2>
@@ -64,16 +67,10 @@ const Services = () => {
           ))}
         </div>
         
-        <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {services.slice(3).map((service) => (
             <ServiceCard key={service.title} {...service} />
           ))}
-        </div>
-
-        <div className="text-center">
-          <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity">
-            💖 Prendre RDV
-          </Button>
         </div>
       </div>
     </section>

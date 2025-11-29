@@ -61,10 +61,6 @@ const CompanySection = () => {
                 </li>
               </ul>
 
-              <p className="text-base md:text-lg text-muted-foreground italic font-light">
-                Voilà ce qui nous anime chaque jour.
-              </p>
-
               <Link to="/a-propos">
                 <Button 
                   className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-base rounded-full shadow-elegant transition-all duration-200 hover:scale-105 mt-2"
