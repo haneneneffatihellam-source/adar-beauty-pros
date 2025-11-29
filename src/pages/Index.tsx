@@ -7,6 +7,8 @@ import HowItWorks from "@/components/HowItWorks";
 import AnimationSection from "@/components/AnimationSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import CompanySection from "@/components/CompanySection";
+import TeamSection from "@/components/TeamSection";
+import AppPromotion from "@/components/AppPromotion";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import StickyBooking from "@/components/StickyBooking";
@@ -23,6 +25,8 @@ const Index = () => {
       <AnimationSection />
       <WhyChooseUs />
       <CompanySection />
+      <TeamSection />
+      <AppPromotion />
       <FAQ />
       <Footer />
       <StickyBooking />
