@@ -9,7 +9,7 @@ const AppPromotion = () => {
             {/* Left: Text & Buttons */}
             <div className="text-white space-y-6">
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight">
-                Plus simple avec l'application À Domicile
+                Plus simple avec l'application
               </h2>
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">
                 Réservez, modifiez ou annulez vos prestations beauté où que vous soyez, en toute simplicité.
@@ -33,10 +33,6 @@ const AppPromotion = () => {
                   </div>
                 </button>
               </div>
-              
-              <p className="text-sm text-white/70 italic pt-2">
-                Bientôt disponible sur iOS et Android
-              </p>
             </div>
             
             {/* Right: App Visual */}

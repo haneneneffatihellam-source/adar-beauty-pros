@@ -44,16 +44,19 @@ const FAQ = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-12 space-y-4">
+          <p className="text-primary font-semibold uppercase tracking-[0.2em] text-sm">
+            FAQ
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">
             Questions fréquentes
           </h2>
           <p className="text-lg text-muted-foreground">
-            Toutes les réponses à vos questions sur nos services
+            Questions d'ordre général
           </p>
         </div>
         
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="w-full mb-12">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger className="text-left text-foreground hover:text-primary">
@@ -65,6 +68,15 @@ const FAQ = () => {
             </AccordionItem>
           ))}
         </Accordion>
+
+        {/* CTA Button */}
+        <div className="flex justify-center animate-fade-in">
+          <a href="/faq">
+            <button className="bg-[#EFB4C6] hover:bg-[#E8A3B8] text-white px-8 py-4 text-base rounded-full shadow-elegant transition-all duration-200 hover:scale-105">
+              Consulter la FAQ complète
+            </button>
+          </a>
+        </div>
       </div>
     </section>
   );

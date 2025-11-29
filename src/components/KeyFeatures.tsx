@@ -23,6 +23,16 @@ const KeyFeatures = () => {
     <section className="py-16 md:py-20 bg-gradient-to-r from-[#F2AEC9] via-[#F3B7D0] to-[#F4C6D8]">
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12 space-y-4 animate-fade-in">
+            <p className="text-white font-semibold uppercase tracking-[0.2em] text-sm">
+              Nos atouts
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl text-white">
+              Pourquoi nous choisir ?
+            </h2>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {features.map((feature, index) => (
               <div
