@@ -7,6 +7,16 @@ const CompanySection = () => {
     <section className="py-20 bg-secondary/10">
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12 space-y-4 animate-fade-in">
+            <p className="text-primary font-semibold uppercase tracking-[0.2em] text-sm">
+              À propos
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl text-foreground">
+              Qui sommes-nous ?
+            </h2>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Vidéo / Image à gauche */}
             <div className="relative group animate-fade-in">
@@ -27,14 +37,6 @@ const CompanySection = () => {
 
             {/* Texte à droite */}
             <div className="space-y-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <div className="space-y-4 text-center">
-                <p className="text-primary font-semibold uppercase tracking-[0.2em] text-sm">
-                  À propos
-                </p>
-                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground">
-                  Qui sommes-nous ?
-                </h2>
-              </div>
               
               <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
                 À Domicile, c'est la première plateforme tunisienne dédiée aux services beauté directement chez vous.
