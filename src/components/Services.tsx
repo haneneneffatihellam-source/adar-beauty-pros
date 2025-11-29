@@ -11,35 +11,35 @@ const Services = () => {
   const services = [
     {
       title: "Coiffure",
-      description: "Coupe, brushing, coloration, lissage, chignons... Nos coiffeuses viennent avec tout le matériel professionnel.",
+      description: "Brushing, coupe, lissage, soins… Des prestations professionnelles à domicile, pour des cheveux sublimés sans effort.",
       icon: Scissors,
       image: coiffureImg,
       link: "/coiffure",
     },
     {
       title: "Onglerie",
-      description: "Manucure, pédicure, nail art, pose de gel... Des ongles parfaits sans quitter votre domicile.",
+      description: "Manucure russe, gel, capsules, pédicure, nail art… La beauté de vos mains & pieds directement chez vous.",
       icon: Sparkles,
       image: onglesImg,
       link: "/ongles",
     },
     {
       title: "Soins",
-      description: "Soins du visage, des mains, des pieds et du corps. Une peau éclatante et soignée à domicile.",
+      description: "Hydratant, éclat, anti-âge, relaxant… Des soins visage & corps adaptés à votre peau, faits par des expertes certifiées.",
       icon: Heart,
       image: soinsImg,
       link: "/soins",
     },
     {
       title: "Épilation",
-      description: "Cire chaude ou orientale, toutes zones. Une peau douce et nette réalisée par des esthéticiennes expérimentées.",
+      description: "Cire chaude ou orientale, toutes zones : visage, maillot, jambes, bras... Confort & douceur à domicile.",
       icon: Droplet,
       image: epilationImg,
       link: "/epilation",
     },
     {
       title: "Maquillage",
-      description: "Maquillage jour, soirée, mariée... Nos maquilleuses révèlent votre beauté pour toutes occasions.",
+      description: "Jour, soirée, shooting ou mariage… Un maquillage professionnel chez vous pour un look parfait.",
       icon: Palette,
       image: maquillageImg,
       link: "/maquillage",
@@ -50,21 +50,21 @@ const Services = () => {
     <section id="services-section" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">
             Nos services beauté
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-sans text-lg text-muted-foreground max-w-2xl mx-auto">
             Des prestations professionnelles réalisées chez vous par des experts certifiés
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           {services.slice(0, 3).map((service) => (
             <ServiceCard key={service.title} {...service} />
           ))}
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 mb-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-5xl mx-auto">
           {services.slice(3).map((service) => (
             <ServiceCard key={service.title} {...service} />
           ))}

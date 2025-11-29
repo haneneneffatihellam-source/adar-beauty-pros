@@ -10,29 +10,32 @@ interface ServiceCardProps {
   link: string;
 }
 
-const ServiceCard = ({ title, description, icon: Icon, image, link }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, image, link }: ServiceCardProps) => {
   return (
     <Link to={link}>
-      <Card className="group overflow-hidden hover:shadow-soft transition-all duration-300 h-full">
-        <div className="relative h-48 overflow-hidden">
+      <Card className="group overflow-hidden border-0 shadow-elegant hover:shadow-xl transition-all duration-500 h-full rounded-2xl">
+        <div className="relative h-[400px] md:h-[500px] overflow-hidden">
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
-          <div className="absolute bottom-4 left-4 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-soft">
-            <Icon className="w-6 h-6 text-primary-foreground" />
+          {/* Overlay dégradé */}
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent" />
+          
+          {/* Contenu */}
+          <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 text-white">
+            <h3 className="font-serif text-2xl md:text-3xl mb-3">
+              {title}
+            </h3>
+            <p className="font-sans text-sm md:text-base leading-relaxed mb-6 line-clamp-2">
+              {description}
+            </p>
+            <button className="self-start px-6 py-3 bg-background/90 hover:bg-background text-foreground rounded-full font-medium transition-all group-hover:scale-105 text-sm">
+              Découvrir →
+            </button>
           </div>
         </div>
-        <CardContent className="p-6">
-          <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-            {title}
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {description}
-          </p>
-        </CardContent>
       </Card>
     </Link>
   );
